@@ -4,14 +4,16 @@
 #
 Name     : perl-Data-Printer
 Version  : 0.40
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-printer-perl/libdata-printer-perl_0.40-1.debian.tar.xz
 Summary  : 'colored pretty-print of Perl data structures and objects'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Data-Printer-license
 Requires: perl-Data-Printer-man
+BuildRequires : buildreq-cpan
 BuildRequires : perl(Clone::PP)
 BuildRequires : perl(File::HomeDir)
 BuildRequires : perl(File::Which)
@@ -26,6 +28,14 @@ BuildRequires : perl(Try::Tiny)
 Data::Printer is a Perl module to pretty-print Perl data structures
 and objects in full color. It is meant to display variables on
 screen, properly formatted to be inspected by a human.
+
+%package license
+Summary: license components for the perl-Data-Printer package.
+Group: Default
+
+%description license
+license components for the perl-Data-Printer package.
+
 
 %package man
 Summary: man components for the perl-Data-Printer package.
@@ -64,6 +74,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/perl-Data-Printer
+cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Data-Printer/deblicense_copyright
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot}
 else
@@ -82,6 +94,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/lib/perl5/site_perl/5.26.1/Data/Printer/Filter/DB.pm
 /usr/lib/perl5/site_perl/5.26.1/Data/Printer/Filter/DateTime.pm
 /usr/lib/perl5/site_perl/5.26.1/Data/Printer/Filter/Digest.pm
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/perl-Data-Printer/deblicense_copyright
 
 %files man
 %defattr(-,root,root,-)

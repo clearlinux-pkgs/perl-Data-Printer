@@ -1,0 +1,9 @@
+0.40
+perl(Sort::Naturally)
+perl(File::HomeDir)
+perl(Package::Stash)
+perl(Module::Implementation)
+perl(Clone::PP)
+perl(Try::Tiny)
+perl(Module::Runtime)
+perl(File::Which)
