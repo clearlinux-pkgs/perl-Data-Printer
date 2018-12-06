@@ -88,12 +88,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/DDP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Data/Printer.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Data/Printer/Filter.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Data/Printer/Filter/DB.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Data/Printer/Filter/DateTime.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Data/Printer/Filter/Digest.pm
+/usr/lib/perl5/vendor_perl/5.28.1DDP.pm
+/usr/lib/perl5/vendor_perl/5.28.1Data/Printer.pm
+/usr/lib/perl5/vendor_perl/5.28.1Data/Printer/Filter.pm
+/usr/lib/perl5/vendor_perl/5.28.1Data/Printer/Filter/DB.pm
+/usr/lib/perl5/vendor_perl/5.28.1Data/Printer/Filter/DateTime.pm
+/usr/lib/perl5/vendor_perl/5.28.1Data/Printer/Filter/Digest.pm
 
 %files dev
 %defattr(-,root,root,-)
