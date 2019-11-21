@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Printer
 Version  : 0.40
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-printer-perl/libdata-printer-perl_0.40-1.debian.tar.xz
@@ -12,6 +12,8 @@ Summary  : 'colored pretty-print of Perl data structures and objects'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Data-Printer-license = %{version}-%{release}
+Requires: perl-Data-Printer-perl = %{version}-%{release}
+Requires: perl(Sort::Naturally)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Clone::PP)
 BuildRequires : perl(File::HomeDir)
@@ -32,6 +34,7 @@ screen, properly formatted to be inspected by a human.
 Summary: dev components for the perl-Data-Printer package.
 Group: Development
 Provides: perl-Data-Printer-devel = %{version}-%{release}
+Requires: perl-Data-Printer = %{version}-%{release}
 
 %description dev
 dev components for the perl-Data-Printer package.
@@ -45,18 +48,28 @@ Group: Default
 license components for the perl-Data-Printer package.
 
 
+%package perl
+Summary: perl components for the perl-Data-Printer package.
+Group: Default
+Requires: perl-Data-Printer = %{version}-%{release}
+
+%description perl
+perl components for the perl-Data-Printer package.
+
+
 %prep
 %setup -q -n Data-Printer-0.40
-cd ..
-%setup -q -T -D -n Data-Printer-0.40 -b 1
+cd %{_builddir}
+tar xf %{_sourcedir}/libdata-printer-perl_0.40-1.debian.tar.xz
+cd %{_builddir}/Data-Printer-0.40
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Data-Printer-0.40/deblicense/
+cp -r %{_builddir}/debian/* %{_builddir}/Data-Printer-0.40/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -66,7 +79,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -75,7 +88,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Data-Printer
-cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Printer/deblicense_copyright
+cp %{_builddir}/Data-Printer-0.40/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Printer/3c118aa664530e21bda2161d5abc8f87b629f9e0
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -88,12 +101,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/DDP.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter/DB.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter/DateTime.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter/Digest.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -106,4 +113,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Data-Printer/deblicense_copyright
+/usr/share/package-licenses/perl-Data-Printer/3c118aa664530e21bda2161d5abc8f87b629f9e0
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/DDP.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter/DB.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter/DateTime.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Data/Printer/Filter/Digest.pm
