@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Printer
 Version  : 0.40
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-printer-perl/libdata-printer-perl_0.40-1.debian.tar.xz
@@ -13,6 +13,7 @@ Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Data-Printer-license = %{version}-%{release}
 Requires: perl-Data-Printer-perl = %{version}-%{release}
+Requires: perl(Clone::PP)
 Requires: perl(Sort::Naturally)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Clone::PP)
