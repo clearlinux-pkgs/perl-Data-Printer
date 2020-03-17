@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Printer
 Version  : 0.40
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-printer-perl/libdata-printer-perl_0.40-1.debian.tar.xz
@@ -89,7 +89,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Data-Printer
-cp %{_builddir}/Data-Printer-0.40/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Printer/3c118aa664530e21bda2161d5abc8f87b629f9e0
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Printer/3c118aa664530e21bda2161d5abc8f87b629f9e0
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -118,9 +118,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/DDP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Printer.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Printer/Filter.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Printer/Filter/DB.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Printer/Filter/DateTime.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Printer/Filter/Digest.pm
+/usr/lib/perl5/vendor_perl/5.30.2/DDP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter/DB.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter/DateTime.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter/Digest.pm
