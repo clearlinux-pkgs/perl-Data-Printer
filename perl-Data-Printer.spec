@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Printer
 Version  : 0.40
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-0.40.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-printer-perl/libdata-printer-perl_0.40-1.debian.tar.xz
@@ -118,9 +118,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/DDP.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter/DB.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter/DateTime.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Printer/Filter/Digest.pm
+/usr/lib/perl5/vendor_perl/5.30.3/DDP.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Printer.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Printer/Filter.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Printer/Filter/DB.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Printer/Filter/DateTime.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Printer/Filter/Digest.pm
