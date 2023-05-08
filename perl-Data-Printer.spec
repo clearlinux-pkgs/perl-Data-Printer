@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Printer
 Version  : 1.001000
-Release  : 33
+Release  : 34
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.001000.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.001000.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-printer-perl/libdata-printer-perl_0.40-1.debian.tar.xz
