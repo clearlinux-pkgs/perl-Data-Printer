@@ -1,4 +1,4 @@
-1.001000
+1.001001
 perl(Class::Load)
 perl(Class::Load::XS)
 perl(Data::OptList)
@@ -16,6 +16,5 @@ perl(Role::Tiny)
 perl(Sub::Exporter)
 perl(Sub::Exporter::Progressive)
 perl(Sub::Install)
-perl(Sub::Name)
 perl(Sub::Quote)
 perl(Try::Tiny)
