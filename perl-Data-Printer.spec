@@ -6,10 +6,10 @@
 # autospec commit: 1eaf8cd
 #
 Name     : perl-Data-Printer
-Version  : 1.002000
-Release  : 38
-URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.002000.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.002000.tar.gz
+Version  : 1.002001
+Release  : 39
+URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.002001.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.002001.tar.gz
 Summary  : 'colored & full-featured pretty print of Perl data structures and objects'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
@@ -66,10 +66,10 @@ perl components for the perl-Data-Printer package.
 
 
 %prep
-%setup -q -n Data-Printer-1.002000
-cd %{_builddir}/Data-Printer-1.002000
+%setup -q -n Data-Printer-1.002001
+cd %{_builddir}/Data-Printer-1.002001
 pushd ..
-cp -a Data-Printer-1.002000 buildavx2
+cp -a Data-Printer-1.002001 buildavx2
 popd
 
 %build
