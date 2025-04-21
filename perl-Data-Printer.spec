@@ -7,7 +7,7 @@
 #
 Name     : perl-Data-Printer
 Version  : 1.002001
-Release  : 44
+Release  : 45
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.002001.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Printer-1.002001.tar.gz
 Summary  : 'colored & full-featured pretty print of Perl data structures and objects'
